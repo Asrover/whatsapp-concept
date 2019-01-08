@@ -78,7 +78,6 @@ const Avatar = styled.img<IAvatarProps>`
 `;
 
 const Name = styled.figcaption<INameProps>`
-  margin-bottom: 10px;
   text-align: center;
   font-size: ${props => props.fontSize}px;
   color: ${props => props.color};
