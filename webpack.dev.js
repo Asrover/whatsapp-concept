@@ -27,11 +27,15 @@ module.exports = {
                 loader: "awesome-typescript-loader"
             },
             {
-                test: /\.(jpe?g|png|gif|svg)$/i,
+                test: /\.(jpe?g|png|gif)$/i,
                 use: [
-                    "url-loader?limit=10000",
+                    "url-loader?limit=8192",
                     "img-loader"
                 ]
+            },
+            {
+                test: /\.svg$/,
+                use: "@svgr/webpack"
             }
         ]
     },
