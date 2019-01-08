@@ -3,20 +3,29 @@ import styled from "styled-components";
 
 interface IProps {
     height: number;
-    withBorder?: boolean;
+    divider?: boolean;
 }
 
 const Spacer: React.FC<IProps> = (props: IProps) => {
     return (
-        <SpacerStyled height={props.height} withBorder={props.withBorder}>
-
-        </SpacerStyled>
+        <SpacerStyled height={props.height} divider={props.divider} />
     );
 };
 
 const SpacerStyled = styled.div<IProps>`
+  position: relative;
   height: ${props => props.height}px;
-  border-bottom: ${props => props.withBorder ? '1px' : '0'}px solid #979797;
+  
+  &::after {
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: #ededed;
+    content: ${props => props.divider ? "''" : "none"};
+  }
 `;
 
 export default Spacer;
