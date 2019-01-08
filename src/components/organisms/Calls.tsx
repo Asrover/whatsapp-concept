@@ -2,6 +2,7 @@ import * as React from 'react';
 import HorizontalScroll from "../molecules/HorizontalScroll";
 import SectionTitle from "../atoms/SectionTitle";
 import Call from "../molecules/Call";
+import Spacer from "../atoms/Spacer";
 
 interface IState {
 
@@ -18,6 +19,7 @@ class Calls extends React.Component<IProps, IState> {
         return (
             <section>
                 <SectionTitle>Calls</SectionTitle>
+                <Spacer height={15} />
                 <HorizontalScroll>
                     <Call userId="123" isMissed={true} />
                     <Call userId="123" isMissed={true} />

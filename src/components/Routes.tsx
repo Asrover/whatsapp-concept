@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Route } from 'react-router-dom';
-import MainPage from "./components/pages/MainPage";
+import MainPage from "./pages/MainPage";
 
 const Routes: React.FC = () => {
     return(

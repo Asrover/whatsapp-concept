@@ -28,9 +28,10 @@ const StoryStyled = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  width: 100%;
+  max-width: 75px;
   min-width: 75px;
-  height: 110px;
+  height: 100px;
+  padding-bottom: 10px;
   background: #000;
   border-radius: 6px;
 `;

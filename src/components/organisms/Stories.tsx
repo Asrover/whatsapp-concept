@@ -3,6 +3,7 @@ import SectionTitle from "../atoms/SectionTitle";
 import Story from "../molecules/Story";
 import styled from "styled-components";
 import HorizontalScroll from "../molecules/HorizontalScroll";
+import Spacer from "../atoms/Spacer";
 
 interface IState {
 
@@ -19,6 +20,7 @@ class Stories extends React.Component<IProps, IState> {
         return (
             <section>
                 <SectionTitle>Stories</SectionTitle>
+                <Spacer height={15} />
                 <HorizontalScroll>
                     <Story ownerId="123" previewUrl="ololo" />
                     <Story ownerId="123" previewUrl="ololo" />
