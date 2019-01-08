@@ -4,6 +4,7 @@ import Stories from "../organisms/Stories";
 import PageLayout from "../templates/PageLayout";
 import Calls from "../organisms/Calls";
 import Spacer from "../atoms/Spacer";
+import RecentMessages from "../organisms/RecentMessages";
 
 interface IState {
 
@@ -22,8 +23,10 @@ class MainPage extends React.Component<IProps, IState> {
                 <Header />
                 <PageLayout>
                     <Stories />
-                    <Spacer height={20} withBorder />
+                    <Spacer height={20} />
                     <Calls />
+                    <Spacer height={40} divider />
+                    <RecentMessages />
                 </PageLayout>
             </>
         );
