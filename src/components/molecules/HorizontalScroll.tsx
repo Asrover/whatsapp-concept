@@ -17,7 +17,7 @@ const HorizontalScroll: React.FC<IProps> = (props: IProps) => {
 const ScrollWrap = styled.div`
   display: flex;
   overflow: auto;
-  margin: 15px -15px;
+  margin: 0 -15px;
   padding-left: 15px;
   -webkit-overflow-scrolling: touch;
   
