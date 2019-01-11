@@ -5,7 +5,7 @@ import { ESizes } from "../../theme";
 interface IState {}
 
 interface IProps {
-    userId: string;
+    userId: number;
     size: ESizes;
     userNameColor?: string;
     hideUserName?: boolean;

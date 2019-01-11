@@ -25,7 +25,7 @@ class Call extends React.Component<IProps, IState> {
         return (
             <CallStyled>
                 <UserAvatar
-                    userId="123"
+                    userId={5}
                     size={ESizes.LARGE}
                     userNameColor="#615375"
                 />
