@@ -1,28 +1,18 @@
 import * as React from 'react';
 import styled from "styled-components";
 import UserAvatar from "../atoms/UserAvatar";
-import {ESizes} from "../../theme";
-
-interface IState {
-
-}
+import { ESizes } from "../../theme";
 
 interface IProps {
-    ownerId: string;
+    userId: number;
     previewUrl: string;
 }
 
-class Story extends React.Component<IProps, IState> {
-    public state: IState = {};
-
-    public render() {
-        return (
-            <StoryStyled>
-               <UserAvatar userId="123" size={ESizes.SMALL} />
-            </StoryStyled>
-        );
-    }
-}
+const Story: React.FC<IProps> = (props: IProps) => (
+    <StoryStyled>
+       <UserAvatar userId={props.userId} size={ESizes.SMALL} />
+    </StoryStyled>
+);
 
 const StoryStyled = styled.div`
   display: flex;
