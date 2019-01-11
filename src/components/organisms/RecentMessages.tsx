@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SectionTitle from "../atoms/SectionTitle";
 import Spacer from "../atoms/Spacer";
-import MessageBlock from "../molecules/MessageBlock";
+import MessageRow from "../molecules/MessageRow";
 
 interface IProps {
     countMessage?: number;
@@ -13,11 +13,11 @@ class RecentMessages extends React.Component<IProps, {}> {
             <section>
                 <SectionTitle>Recent messages</SectionTitle>
                 <Spacer height={20} />
-                <MessageBlock />
+                <MessageRow />
                 <Spacer height={20} divider />
-                <MessageBlock />
+                <MessageRow />
                 <Spacer height={20} divider />
-                <MessageBlock />
+                <MessageRow />
             </section>
         );
     }

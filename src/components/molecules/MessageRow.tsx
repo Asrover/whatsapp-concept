@@ -3,21 +3,15 @@ import UserAvatar from "../atoms/UserAvatar";
 import {ESizes} from "../../theme";
 import styled from "styled-components";
 
-interface IState {
-
-}
-
 interface IProps {
 
 }
 
-class MessageBlock extends React.Component<IProps, IState> {
-    public state: IState = {};
-
+class MessageRow extends React.Component<IProps, {}> {
     public render() {
         return (
-            <MessageBlockStyled>
-                <UserAvatar userId="123" size={ESizes.MEDIUM} />
+            <MessageRowStyled>
+                <UserAvatar userId={5} size={ESizes.MEDIUM} />
                 <Wrap>
                     <Meta>
                         <UserName>Sonia</UserName>
@@ -25,12 +19,12 @@ class MessageBlock extends React.Component<IProps, IState> {
                     </Meta>
                     <Text>Hello! Where r u?</Text>
                 </Wrap>
-            </MessageBlockStyled>
+            </MessageRowStyled>
         );
     }
 }
 
-const MessageBlockStyled = styled.div`
+const MessageRowStyled = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: stretch;
@@ -65,4 +59,4 @@ const Date = styled.div`
   color: #4a4a4a;
 `;
 
-export default MessageBlock;
+export default MessageRow;
