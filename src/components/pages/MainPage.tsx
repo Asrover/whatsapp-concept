@@ -6,17 +6,7 @@ import Calls from "../organisms/Calls";
 import Spacer from "../atoms/Spacer";
 import RecentMessages from "../organisms/RecentMessages";
 
-interface IState {
-
-}
-
-interface IProps {
-
-}
-
-class MainPage extends React.Component<IProps, IState> {
-    public state: IState = {};
-
+class MainPage extends React.Component<{}, {}> {
     public render() {
         return (
             <>

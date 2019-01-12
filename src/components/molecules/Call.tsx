@@ -10,7 +10,7 @@ interface IState {
 }
 
 interface IProps {
-    userId: string;
+    userId: number;
     isMissed: boolean;
 }
 
