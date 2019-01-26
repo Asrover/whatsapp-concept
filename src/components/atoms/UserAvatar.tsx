@@ -32,7 +32,7 @@ class UserAvatar extends React.Component<IProps, IState> {
 
         return (
             <User>
-                <Avatar  size={sizes[size].avatar} src={require('../../assets/avatar/avatar_1.jpg')} />
+                <Avatar size={sizes[size].avatar} src={require('../../assets/avatar/avatar_1.jpg')} />
                 { !hideUserName &&
                     <Name
                         fontSize={sizes[size].name}

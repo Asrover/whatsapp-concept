@@ -22,15 +22,20 @@ class Call extends React.Component<IProps, IState> {
     public state: IState = {};
 
     public render() {
+        const {
+            userId,
+            isMissed
+        } = this.props;
+
         return (
             <CallStyled>
                 <UserAvatar
-                    userId={5}
+                    userId={userId}
                     size={ESizes.LARGE}
                     userNameColor="#615375"
                 />
-                <CallType isMissed={this.props.isMissed}>
-                    { this.props.isMissed
+                <CallType isMissed={isMissed}>
+                    { isMissed
                         ? <PhoneMissIcon width={12} height={12} viewBox="0 0 24 24" fill="#fff" />
                         : <PhoneIcon width={12} height={12} viewBox="0 0 24 24" fill="#fff" />
                     }

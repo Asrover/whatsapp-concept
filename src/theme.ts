@@ -4,3 +4,7 @@ export enum ESizes {
     LARGE,
     EXTRA_LARGE
 }
+
+export const Theme = {
+  headerHeight: 54,
+};

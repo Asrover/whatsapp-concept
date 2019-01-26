@@ -1,9 +1,9 @@
 import { createStore, combineReducers, applyMiddleware } from "redux";
 import { IMainState, MainReducer } from "./main";
-import {IStoriesState, StoriesReducer} from "./stories";
+import { IStoriesState, StoriesReducer } from "./stories";
+import { CallsReducer, ICallsState } from "./calls";
 import thunkMiddleware from 'redux-thunk';
 import logger from 'redux-logger';
-import { CallsReducer, ICallsState } from "./calls";
 
 export interface IAppState {
     main: IMainState;

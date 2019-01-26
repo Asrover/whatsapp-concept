@@ -7,6 +7,7 @@ import Call from "../molecules/Call";
 import { ThunkDispatch } from "redux-thunk";
 import { IAppState } from "../../stores";
 import { connect } from "react-redux";
+import Loader from 'react-loader-spinner';
 
 interface IPropsFromState {
     calls: ICall[];
@@ -33,6 +34,14 @@ class Calls extends React.Component<IPropsFromState & IPropsFromDispatch> {
                 <SectionTitle>Calls</SectionTitle>
                 <Spacer height={15} />
                 <HorizontalScroll>
+                    { isFetching &&
+                        <Loader
+                            type="Oval"
+                            color="#25d366"
+                            height={32}
+                            width={32}
+                        />
+                    }
                     { calls.length > 0 && calls.map(call =>
                         <Call
                             key={call.id}

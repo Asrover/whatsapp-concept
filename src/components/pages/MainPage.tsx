@@ -1,5 +1,5 @@
 import * as React from 'react';
-import Header from "../templates/Header";
+import MainHeader from "../templates/MainHeader";
 import Stories from "../organisms/Stories";
 import PageLayout from "../templates/PageLayout";
 import Calls from "../organisms/Calls";
@@ -10,7 +10,7 @@ class MainPage extends React.Component<{}, {}> {
     public render() {
         return (
             <>
-                <Header />
+                <MainHeader />
                 <PageLayout>
                     <Stories />
                     <Spacer height={20} />

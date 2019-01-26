@@ -1,9 +1,7 @@
 import { createAsyncAction } from 'typesafe-actions';
 import { ECallsActionTypes, ICall } from "./types";
 import { Dispatch } from "redux";
-import { CallsFromApi } from "../../fixtures/Calls";
-
-const responseServerDelay = 1000;
+import { CONFIG } from "../../config";
 
 export const fetchCalls = createAsyncAction(
     ECallsActionTypes.FETCH_CALLS_REQUEST,
@@ -15,12 +13,16 @@ export const loadCalls = () => {
     return (dispatch: Dispatch) => {
         dispatch(fetchCalls.request());
 
-        setTimeout(() => {
-            dispatch(fetchCalls.success(CallsFromApi));
-        }, responseServerDelay);
+        const startFetch = new Date().getTime();
 
-        // return fetch(`https://reqres.in/api/users`)
-        //     .then(response => response.json())
-        //     .then(json => dispatch(fetchCalls.success(json)))
+        return fetch(CONFIG.callsApi)
+            .then(response => response.json())
+            .then(json => {
+                const fetchDuration = new Date().getTime() - startFetch;
+
+                setTimeout(() => {
+                    dispatch(fetchCalls.success(json));
+                }, CONFIG.minFetchDuration - fetchDuration);
+            })
     }
 };

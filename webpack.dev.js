@@ -7,6 +7,7 @@ module.exports = {
         app: "./src/index.tsx"
     },
     output: {
+        publicPath: "/",
         path: path.resolve(__dirname, "dist"),
         filename: "[name].js"
     },
@@ -17,6 +18,7 @@ module.exports = {
         host: "0.0.0.0",
         port: 3000,
         disableHostCheck: true,
+        historyApiFallback: true,
         inline: true,
         hot: true
     },
@@ -25,6 +27,10 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 loader: "awesome-typescript-loader"
+            },
+            {
+                test: /\.css$/,
+                use: ["style-loader", "css-loader"],
             },
             {
                 test: /\.(jpe?g|png|gif)$/i,

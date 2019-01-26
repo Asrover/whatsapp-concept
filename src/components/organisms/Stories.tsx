@@ -6,7 +6,8 @@ import Spacer from "../atoms/Spacer";
 import { IStoriesState, IStory, loadStories, TStoriesAction } from "../../stores/stories";
 import { connect } from "react-redux";
 import { ThunkDispatch } from "redux-thunk";
-import {IAppState} from "../../stores";
+import { IAppState } from "../../stores";
+import Loader from 'react-loader-spinner';
 
 interface IPropsFromState {
     stories: IStory[];
@@ -33,6 +34,14 @@ class Stories extends React.Component<IPropsFromState & IPropsFromDispatch> {
                 <SectionTitle>Stories</SectionTitle>
                 <Spacer height={15} />
                 <HorizontalScroll>
+                    { isFetching &&
+                        <Loader
+                            type="Oval"
+                            color="#25d366"
+                            height={32}
+                            width={32}
+                        />
+                    }
                     { stories.length > 0 && stories.map(story =>
                         <Story
                             key={story.id}

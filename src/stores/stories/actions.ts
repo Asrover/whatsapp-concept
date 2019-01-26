@@ -1,9 +1,7 @@
 import { createAsyncAction } from 'typesafe-actions';
 import { EStoriesActionTypes, IStory } from "./types";
 import { Dispatch } from "redux";
-import { StoriesFromAPI } from "../../fixtures/Stories";
-
-const responseServerDelay = 1000;
+import { CONFIG } from "../../config";
 
 export const fetchStories = createAsyncAction(
     EStoriesActionTypes.FETCH_STORIES_REQUEST,
@@ -15,12 +13,16 @@ export const loadStories = () => {
     return (dispatch: Dispatch) => {
         dispatch(fetchStories.request());
 
-        setTimeout(() => {
-            dispatch(fetchStories.success(StoriesFromAPI));
-        }, responseServerDelay);
+        const startFetch = new Date().getTime();
 
-        // return fetch(`https://reqres.in/api/users`)
-        //     .then(response => response.json())
-        //     .then(json => dispatch(fetchStories.success(json)))
+        return fetch(CONFIG.storiesApi)
+            .then(response => response.json())
+            .then(json => {
+                const fetchDuration = new Date().getTime() - startFetch;
+
+                setTimeout(() => {
+                    dispatch(fetchStories.success(json));
+                }, CONFIG.minFetchDuration - fetchDuration);
+            })
     }
 };

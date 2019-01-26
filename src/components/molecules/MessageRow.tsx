@@ -11,7 +11,11 @@ class MessageRow extends React.Component<IProps, {}> {
     public render() {
         return (
             <MessageRowStyled>
-                <UserAvatar userId={5} size={ESizes.MEDIUM} />
+                <UserAvatar
+                    userId={5}
+                    size={ESizes.MEDIUM}
+                    hideUserName={true}
+                />
                 <Wrap>
                     <Meta>
                         <UserName>Sonia</UserName>

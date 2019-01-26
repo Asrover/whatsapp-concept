@@ -9,12 +9,12 @@ interface IProps {
 }
 
 const Story: React.FC<IProps> = (props: IProps) => (
-    <StoryStyled>
+    <StoryStyled image={props.previewUrl}>
        <UserAvatar userId={props.userId} size={ESizes.SMALL} />
     </StoryStyled>
 );
 
-const StoryStyled = styled.div`
+const StoryStyled = styled.div<{ image: string }>`
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -22,7 +22,8 @@ const StoryStyled = styled.div`
   min-width: 75px;
   height: 100px;
   padding-bottom: 10px;
-  background: #000;
+  background: url('${props => props.image}');
+  background-size: cover;
   border-radius: 6px;
 `;
 

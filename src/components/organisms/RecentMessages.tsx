@@ -2,6 +2,7 @@ import * as React from 'react';
 import SectionTitle from "../atoms/SectionTitle";
 import Spacer from "../atoms/Spacer";
 import MessageRow from "../molecules/MessageRow";
+import {Link} from "react-router-dom";
 
 interface IProps {
     countMessage?: number;
@@ -13,11 +14,17 @@ class RecentMessages extends React.Component<IProps, {}> {
             <section>
                 <SectionTitle>Recent messages</SectionTitle>
                 <Spacer height={20} />
-                <MessageRow />
+                <Link to="/chat/123" style={{ textDecoration: 'none' }}>
+                    <MessageRow />
+                </Link>
                 <Spacer height={20} divider />
-                <MessageRow />
+                <Link to="/chat/123" style={{ textDecoration: 'none' }}>
+                    <MessageRow />
+                </Link>
                 <Spacer height={20} divider />
-                <MessageRow />
+                <Link to="/chat/123" style={{ textDecoration: 'none' }}>
+                    <MessageRow />
+                </Link>
             </section>
         );
     }
